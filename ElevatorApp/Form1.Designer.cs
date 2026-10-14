@@ -28,58 +28,138 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnFloor1 = new Button();
-            lblFloor = new Label();
-            btnFloor0 = new Button();
+            btnPanelFloor1 = new Button();
+            btnPanelFloor0 = new Button();
+            btnRequestFloor0 = new Button();
+            btnRequestFloor1 = new Button();
+            lblPanelDisplay = new Label();
+            lblFloor0Status = new Label();
+            lblFloor1Status = new Label();
+            groupBox1 = new GroupBox();
+            btnLog = new Button();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // btnFloor1
+            // btnPanelFloor1
             // 
-            btnFloor1.Location = new Point(477, 205);
-            btnFloor1.Name = "btnFloor1";
-            btnFloor1.Size = new Size(97, 23);
-            btnFloor1.TabIndex = 0;
-            btnFloor1.Text = "Go to Floor 1";
-            btnFloor1.UseVisualStyleBackColor = true;
-            btnFloor1.Click += btnFloor1_Click;
+            btnPanelFloor1.Location = new Point(6, 22);
+            btnPanelFloor1.Name = "btnPanelFloor1";
+            btnPanelFloor1.Size = new Size(97, 23);
+            btnPanelFloor1.TabIndex = 0;
+            btnPanelFloor1.Text = "Go to Floor 1";
+            btnPanelFloor1.UseVisualStyleBackColor = true;
+            btnPanelFloor1.Click += btnFloor1_Click;
             // 
-            // lblFloor
+            // btnPanelFloor0
             // 
-            lblFloor.AutoSize = true;
-            lblFloor.Location = new Point(477, 187);
-            lblFloor.Name = "lblFloor";
-            lblFloor.Size = new Size(46, 15);
-            lblFloor.TabIndex = 1;
-            lblFloor.Text = "Floor: 0";
+            btnPanelFloor0.Location = new Point(6, 51);
+            btnPanelFloor0.Name = "btnPanelFloor0";
+            btnPanelFloor0.Size = new Size(97, 23);
+            btnPanelFloor0.TabIndex = 2;
+            btnPanelFloor0.Text = "Go to floor 0";
+            btnPanelFloor0.UseVisualStyleBackColor = true;
+            btnPanelFloor0.Click += btnFloor0_Click;
             // 
-            // btnFloor0
+            // btnRequestFloor0
             // 
-            btnFloor0.Location = new Point(477, 234);
-            btnFloor0.Name = "btnFloor0";
-            btnFloor0.Size = new Size(97, 23);
-            btnFloor0.TabIndex = 2;
-            btnFloor0.Text = "Go to floor 0";
-            btnFloor0.UseVisualStyleBackColor = true;
-            btnFloor0.Click += btnFloor0_Click;
+            btnRequestFloor0.Location = new Point(309, 246);
+            btnRequestFloor0.Name = "btnRequestFloor0";
+            btnRequestFloor0.Size = new Size(75, 23);
+            btnRequestFloor0.TabIndex = 3;
+            btnRequestFloor0.Text = "Call Floor 0";
+            btnRequestFloor0.UseVisualStyleBackColor = true;
+            btnRequestFloor0.Click += btnRequestFloor0_Click;
+            // 
+            // btnRequestFloor1
+            // 
+            btnRequestFloor1.Location = new Point(309, 38);
+            btnRequestFloor1.Name = "btnRequestFloor1";
+            btnRequestFloor1.Size = new Size(75, 23);
+            btnRequestFloor1.TabIndex = 4;
+            btnRequestFloor1.Text = "Call Floor 1";
+            btnRequestFloor1.UseVisualStyleBackColor = true;
+            btnRequestFloor1.Click += btnRequestFloor1_Click;
+            // 
+            // lblPanelDisplay
+            // 
+            lblPanelDisplay.AutoSize = true;
+            lblPanelDisplay.Font = new Font("Segoe UI", 18F);
+            lblPanelDisplay.Location = new Point(144, 22);
+            lblPanelDisplay.Name = "lblPanelDisplay";
+            lblPanelDisplay.Size = new Size(24, 32);
+            lblPanelDisplay.TabIndex = 5;
+            lblPanelDisplay.Text = "-";
+            // 
+            // lblFloor0Status
+            // 
+            lblFloor0Status.AutoSize = true;
+            lblFloor0Status.Location = new Point(390, 250);
+            lblFloor0Status.Name = "lblFloor0Status";
+            lblFloor0Status.Size = new Size(12, 15);
+            lblFloor0Status.TabIndex = 6;
+            lblFloor0Status.Text = "-";
+            // 
+            // lblFloor1Status
+            // 
+            lblFloor1Status.AutoSize = true;
+            lblFloor1Status.Location = new Point(390, 42);
+            lblFloor1Status.Name = "lblFloor1Status";
+            lblFloor1Status.Size = new Size(12, 15);
+            lblFloor1Status.TabIndex = 0;
+            lblFloor1Status.Text = "-";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(btnPanelFloor1);
+            groupBox1.Controls.Add(btnPanelFloor0);
+            groupBox1.Controls.Add(lblPanelDisplay);
+            groupBox1.Location = new Point(837, 56);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(208, 240);
+            groupBox1.TabIndex = 7;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Control Panel";
+            // 
+            // btnLog
+            // 
+            btnLog.Location = new Point(839, 346);
+            btnLog.Name = "btnLog";
+            btnLog.Size = new Size(75, 23);
+            btnLog.TabIndex = 8;
+            btnLog.Text = "Show Log";
+            btnLog.TextAlign = ContentAlignment.BottomCenter;
+            btnLog.UseVisualStyleBackColor = true;
+            btnLog.Click += btnLog_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnFloor0);
-            Controls.Add(lblFloor);
-            Controls.Add(btnFloor1);
+            ClientSize = new Size(1101, 513);
+            Controls.Add(btnLog);
+            Controls.Add(groupBox1);
+            Controls.Add(lblFloor1Status);
+            Controls.Add(lblFloor0Status);
+            Controls.Add(btnRequestFloor1);
+            Controls.Add(btnRequestFloor0);
             Name = "Form1";
             Text = "Form1";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button btnFloor1;
-        private Label lblFloor;
-        private Button btnFloor0;
+        private Button btnPanelFloor1;
+        private Button btnPanelFloor0;
+        private Button btnRequestFloor0;
+        private Button btnRequestFloor1;
+        private Label lblPanelDisplay;
+        private Label lblFloor0Status;
+        private Label lblFloor1Status;
+        private GroupBox groupBox1;
+        private Button btnLog;
     }
 }
