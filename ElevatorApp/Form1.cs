@@ -3,6 +3,8 @@ namespace ElevatorApp
     public partial class Form1 : Form
     {
         int currentFloor = 0;
+        int targetFloor = 0;
+        int targetTop = 307;
         public Form1()
         {
             InitializeComponent();
@@ -36,8 +38,17 @@ namespace ElevatorApp
 
         private void MoveTo(int Floor)
         {
-            currentFloor = Floor;
-            UpdateDisplay();
+            targetFloor = Floor;
+
+            if(Floor==1)
+            {
+                targetTop = 0;
+            }
+            else
+            {
+                targetTop = 310;
+            }
+            tmrMove.Start();
 
         }
 
@@ -54,6 +65,29 @@ namespace ElevatorApp
         private void btnLog_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tmrMove_Tick(object sender, EventArgs e)
+        {
+            const int step = 5;
+            int distance = targetTop - pnlCar.Top;
+
+            if (Math.Abs(distance) <= step)
+            {
+                pnlCar.Top = targetTop;
+                tmrMove.Stop();
+                currentFloor = targetFloor;
+                UpdateDisplay();
+            }
+            else if (distance < 0)
+            {
+                pnlCar.Top -= step;
+            }
+            else
+            {
+                pnlCar.Top += step;
+            }
+            
         }
     }
 }

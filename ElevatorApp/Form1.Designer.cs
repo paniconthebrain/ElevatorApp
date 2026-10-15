@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnPanelFloor1 = new Button();
             btnPanelFloor0 = new Button();
             btnRequestFloor0 = new Button();
@@ -37,7 +38,11 @@
             lblFloor1Status = new Label();
             groupBox1 = new GroupBox();
             btnLog = new Button();
+            pnlShaft = new Panel();
+            pnlCar = new Panel();
+            tmrMove = new System.Windows.Forms.Timer(components);
             groupBox1.SuspendLayout();
+            pnlShaft.SuspendLayout();
             SuspendLayout();
             // 
             // btnPanelFloor1
@@ -62,7 +67,7 @@
             // 
             // btnRequestFloor0
             // 
-            btnRequestFloor0.Location = new Point(309, 246);
+            btnRequestFloor0.Location = new Point(553, 376);
             btnRequestFloor0.Name = "btnRequestFloor0";
             btnRequestFloor0.Size = new Size(75, 23);
             btnRequestFloor0.TabIndex = 3;
@@ -72,7 +77,7 @@
             // 
             // btnRequestFloor1
             // 
-            btnRequestFloor1.Location = new Point(309, 38);
+            btnRequestFloor1.Location = new Point(553, 144);
             btnRequestFloor1.Name = "btnRequestFloor1";
             btnRequestFloor1.Size = new Size(75, 23);
             btnRequestFloor1.TabIndex = 4;
@@ -93,7 +98,7 @@
             // lblFloor0Status
             // 
             lblFloor0Status.AutoSize = true;
-            lblFloor0Status.Location = new Point(390, 250);
+            lblFloor0Status.Location = new Point(634, 380);
             lblFloor0Status.Name = "lblFloor0Status";
             lblFloor0Status.Size = new Size(12, 15);
             lblFloor0Status.TabIndex = 6;
@@ -102,7 +107,7 @@
             // lblFloor1Status
             // 
             lblFloor1Status.AutoSize = true;
-            lblFloor1Status.Location = new Point(390, 42);
+            lblFloor1Status.Location = new Point(634, 148);
             lblFloor1Status.Name = "lblFloor1Status";
             lblFloor1Status.Size = new Size(12, 15);
             lblFloor1Status.TabIndex = 0;
@@ -131,11 +136,34 @@
             btnLog.UseVisualStyleBackColor = true;
             btnLog.Click += btnLog_Click;
             // 
+            // pnlShaft
+            // 
+            pnlShaft.BackColor = Color.FromArgb(0, 192, 192);
+            pnlShaft.Controls.Add(pnlCar);
+            pnlShaft.Location = new Point(26, 310);
+            pnlShaft.Name = "pnlShaft";
+            pnlShaft.Size = new Size(173, 471);
+            pnlShaft.TabIndex = 9;
+            // 
+            // pnlCar
+            // 
+            pnlCar.BackColor = Color.FromArgb(192, 0, 0);
+            pnlCar.Location = new Point(26, 307);
+            pnlCar.Name = "pnlCar";
+            pnlCar.Size = new Size(115, 161);
+            pnlCar.TabIndex = 0;
+            // 
+            // tmrMove
+            // 
+            tmrMove.Interval = 20;
+            tmrMove.Tick += tmrMove_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1101, 513);
+            ClientSize = new Size(1103, 861);
+            Controls.Add(pnlShaft);
             Controls.Add(btnLog);
             Controls.Add(groupBox1);
             Controls.Add(lblFloor1Status);
@@ -146,6 +174,7 @@
             Text = "Form1";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            pnlShaft.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -161,5 +190,8 @@
         private Label lblFloor1Status;
         private GroupBox groupBox1;
         private Button btnLog;
+        private Panel pnlShaft;
+        private Panel pnlCar;
+        private System.Windows.Forms.Timer tmrMove;
     }
 }
